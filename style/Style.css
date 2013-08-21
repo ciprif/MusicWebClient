@@ -1,0 +1,155 @@
+body
+{
+    background-image: url("../images/background.png");
+}
+
+h1
+{
+    padding-left: 380px;
+    font-family: 'BeautifulEveryTime';
+    font-size: 48px;
+    color: #fff;
+}
+
+p
+{
+     width: 165px;
+     line-height: 20px;
+}
+
+.infoSpan
+{
+    overflow-x: auto; /* Use horizontal scroller if needed */
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    white-space : normal;
+    position: relative;
+    left: 10px;
+}
+
+@font-face
+{
+    font-family: 'BeautifulEveryTime';
+    src: url("../fonts/BeautifulEveryTime.ttf");
+}
+
+@font-face
+{
+    font-family: 'KGKeep';
+    src: url("../fonts/KGKeepYourHeadUp.ttf");
+}
+
+::-webkit-scrollbar { 
+    display: none;
+}
+
+li
+{
+    text-wrap: none;
+    text-align: center;
+    vertical-align: text-top;
+    font-family: KaiTi;
+    font-size: 10px;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    width: fill-available;
+    height: 40px;
+    list-style-type: none;
+    line-height: 40px;
+    font-size: 18px;
+    cursor: default;
+}
+
+.niceListOdd
+{
+    background-color: rgba(0, 148, 255, 0.46);
+}
+
+.niceListEven
+{
+    background-color: rgba(241, 229, 229, 0.25);
+}
+
+.niceListClicked
+{
+    background-color: Gray;
+}
+
+.playBar
+{
+    margin-bottom: 60px;
+    margin-top: 20px;
+    padding-bottom: 0px;
+    background-color: rgba(5, 5, 5, 0.21);
+    width: 1100px;
+    height: 80px;
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+	direction: ltr;
+}
+
+.listContainer
+{
+    background-color: rgba(5, 5, 5, 0.09);
+    margin-left: 200px;
+    padding-left: 25px;
+    height: 700px;
+    width: 700px;
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.infoBoxStyle
+{
+    position: absolute;
+    margin-top: 380px;
+    left: 10px;
+    top: 10px;
+    width: 185px;
+    height: min-content;
+    min-height: 178px;
+    max-height: 450px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-family: KaiTi;
+    font-size: 20px;
+    text-align: left;
+    line-height: 170%;
+    color: rgba(26, 26, 26, 1);
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    cursor: default;
+}
+
+.niceList
+{
+    width: 600px;
+    margin-bottom: 300px;
+    overflow: scroll;
+    height: 670px;
+}
+
+.buttonImg
+{
+	padding-left: 30px;
+}
