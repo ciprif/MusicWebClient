@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style/fonts.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/progressBar.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/playBar.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/infoBox.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/niceList.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+        <script type="text/javascript" src="scripts/Script.js"></script>
+    </head>
+    <body onload="init()">
+        <div id="content">
+            <h1 style="">Music Web Client</h1>
+            <div id="listContainer" class="listContainerSmall">
+                <ul id="songs" class="niceListSmall">
+                </ul>
+                <div id="infoBox" class="infoBoxSmall"><div id="textPresenter">File info...</div></div>
+            </div>
+            <div id="playBar">
+			    <div style="padding-left: 80px; padding-top: 10px;">
+				    <img src="images/prevButton.png"
+                         onclick="prevButtonClicked()"
+                         class="buttonImg"></img>
+				    <img src="images/playButton.png"
+                         onclick="playpauseButtonClicked()"
+                         class="buttonImg"
+                         id="playpauseButton"></img>
+				    <img src="images/nextButton.png"
+                         onclick="nextButtonClicked()"
+                         class="buttonImg"></img>
+                    <div id="progressBarContainer">
+					    <div id="progressBar">
+						    <img id="imgProg" src="images/progress.jpg"></img>
+					    </div>
+                    </div>
+                    <img src="images/refreshButton.png"
+                         onclick="refreshButtonClicked()"
+                         class="buttonImg"></img>
+			    </div>
+		    </div>
+            <span id="devInfo">Designed by: Ciprian Filipas (cipri.filipas@gmail.com)</span>
+        </div>
+    </body>
+</html>

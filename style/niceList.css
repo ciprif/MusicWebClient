@@ -1,0 +1,110 @@
+/*style for list items*/
+li {
+    /*text*/
+    vertical-align: text-top;
+    text-wrap: none;
+    text-align: center;
+    line-height: 240%;
+    font-family: KaiTi;
+    font-size: 100%;
+    
+    /*overflow*/
+	overflow-y: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    white-space : normal;
+    
+    /*size*/
+    width: 100%;
+    height: 6%;
+    position: relative;
+    
+    /*misc*/
+    cursor: default;
+    list-style-type: none;
+}
+
+/*class for the nice list*/
+.niceListSmall
+{
+    /*size & positioning*/
+    width: 85%;
+    height: 95%;
+    padding-left: 0;
+    margin-left: 7.5%;
+	
+    /*misc*/
+	font-size: small;
+    overflow-y: scroll;
+}
+
+/*class for the nice list*/
+.niceList
+{
+    /*size & positioning*/
+    width: 85%;
+    height: 95%;
+    padding-left: 0;
+    margin-left: 7.5%;
+    /*misc*/
+    overflow-y: scroll;
+}
+
+/*class for the odd list items*/
+.niceListOdd
+{
+    background-color: rgba(0, 148, 255, 0.46);
+}
+
+/*class for the even list items*/
+.niceListEven
+{
+    background-color: rgba(241, 229, 229, 0.25);
+}
+
+/*class for the clicked coloring*/
+.niceListClicked
+{
+    background-color: Gray;
+}
+
+/*style for the list container*/
+.listContainer
+{
+    /*positioning*/
+    margin-left: 11%;
+    height: 65%;
+    width: 38%;
+    
+    /*background*/
+    background-color: rgba(5, 5, 5, 0.09);
+    
+    /*border*/
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.listContainerSmall
+{
+    /*positioning*/
+    margin-left: 11%;
+    height: 70%;
+    width: 38%;
+    
+    /*background*/
+    background-color: rgba(5, 5, 5, 0.09);
+    
+    /*border*/
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}

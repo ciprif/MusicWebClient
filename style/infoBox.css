@@ -1,0 +1,57 @@
+/*style for the info box*/
+#infoBox
+{
+    /*positioning & size*/
+    position: absolute;
+    left: 0.5%;
+    top: 0.5%;
+    width: 10%;
+    margin-top: 20%;
+    height: min-content;
+    min-height: 20%;
+    max-height: 34%;
+    
+    /*background*/
+    background-color: rgba(0, 0, 0, 0.08);
+    
+    /*border*/
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+    /*text*/
+    font-family: KaiTi;
+    text-align: left;
+    line-height: 170%;
+    color: rgba(26, 26, 26, 1);
+    
+    /*overflow*/
+    /*overflow-x: auto;*/
+}
+
+.infoBoxLarge
+{
+	font-size: large;
+}
+.infoBoxSmall
+{
+	font-size: small;
+}
+
+/*style for the info box span*/
+#textPresenter {
+    /*overflow*/
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    white-space : normal;
+    
+    /*positioning & size*/
+    position: relative;
+    left: 8%;
+    max-height: inherit; 
+}

@@ -1,0 +1,49 @@
+/*style for the progress bar*/
+#progressBar
+{
+	/*size*/
+	width: 4%;
+    height: 100%;
+	
+	/*misc*/
+	overflow: hidden;
+	
+    /*border*/
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#imgProg
+{
+	width: 800px;
+	height: 100%;
+	
+    /*border*/
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/*style for the progress bar container*/
+#progressBarContainer
+{
+    /*size & positioning*/
+	position: relative;
+    margin-left: 2%;
+	margin-top: 1.7%;
+	height:  30%;
+    width: 57%;
+    
+    /*border*/
+    border-style: ridge;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+    /*misc*/
+    float: left;
+}
