@@ -7,7 +7,7 @@ var xmlHttpForItem;
 var xmlHttpForPos;
 var playback = false;
 var musicTimer = null;
-var host = "192.168.1.104";
+var host = "localhost";
 
 function init()
 {
@@ -143,8 +143,16 @@ function GetNodeValue(nodeID)
     var node = nodeArray[nodeID];
 
     nodeInfo.id = node.getElementsByTagName("ID")[0].textContent;
-    nodeInfo.artist = node.getElementsByTagName("Artist")[0].textContent;
-    nodeInfo.name = node.getElementsByTagName("Name")[0].textContent;
+    
+    if(node.getElementsByTagName("Artist")[0] != undefined)
+        nodeInfo.artist = node.getElementsByTagName("Artist")[0].textContent;
+    else
+        nodeInfo.artist = node.getElementsByTagName("Filename")[0].textContent;
+    
+    if(node.getElementsByTagName("Name")[0] != undefined)
+        nodeInfo.name = node.getElementsByTagName("Name")[0].textContent;
+    else
+        nodeInfo.name = node.getElementsByTagName("Fullpath")[0].textContent;
 
     return nodeInfo;
 }
@@ -247,4 +255,11 @@ function refreshButtonClicked()
 {
     var uri = "http://" + host + ":8080/musicWebService/items";
     WebGetRequest(xmlHttpForList, uri, true);
+}
+
+function progressBarClicked(event)
+{
+    var xValue = event.layerX;
+    var percentage = (xValue * 100) / document.getElementById("progressBarContainer").clientWidth;
+    WebPostRequest(xmlHttpForPos, "http://" + host + ":8080/musicWebService/items/jumpToPos/", false, percentage);
 }
