@@ -30,7 +30,8 @@
     color: rgba(26, 26, 26, 1);
     
     /*overflow*/
-    /*overflow-x: auto;*/
+    overflow-Y: auto;
+    overflow-x: hidden;
 }
 
 .infoBoxLarge

@@ -54,7 +54,7 @@ function ParseDOMItem(xmlDoc)
 
     for(i = 0; i < node.childNodes.length; i++)
     {
-        if (node.childNodes[i].textContent != "") {
+        if (node.childNodes[i].textContent != "" && node.childNodes[i].tagName != "Duration") {
             document.getElementById("textPresenter").innerHTML +=
             "<p>" +
             node.childNodes[i].tagName + ": " +

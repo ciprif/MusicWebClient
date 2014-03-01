@@ -2,11 +2,16 @@
 function onListItemClick(id)
 {
     updateListItemUI(id);
-
-    //jump to file request
-    WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/enqueue/", true, id);
-    //get mp3 file info request
-    WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, id);
+    if (adminMode == false) {
+        //enqueue to file request
+        WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/enqueue/", true, id);
+    }
+    else
+    {
+         WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/jump/", true, id);
+         //get mp3 info
+         WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, id);
+    }
 }
 
 function nextButtonClicked()
