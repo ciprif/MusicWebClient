@@ -11,39 +11,48 @@
         <script type="text/javascript" src="scripts/Script.js"></script>
         <script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="scripts/lazyLoad.js"></script>
+        <script type="text/javascript" src="scripts/helpers.js"></script>
+        <script type="text/javascript" src="scripts/playback.js"></script>
     </head>
     <body onload="">
         <div id="content">
-            <h1 style="">Music Web Client</h1> 
+            <h1 id="title" class="titleUser"> Music Web Client </h1>
             <input type="text" id="textFilter" class="filterInput" placeholder="Search..."></input>          
-            <div id="listContainer" class="listContainerSmall">                
+            <div id="listContainer" class="listContainerSmallUser"> 
                 <ul id="songs" class="niceListSmall">
                 </ul>
-                <div id="infoBox" class="infoBoxSmall"><div id="textPresenter">File info...</div></div>
+                <div id="infoBox" class="infoBoxUser"><div id="textPresenter">File info...</div></div>
             </div>
-            <div id="playBar">
-			    <div style="padding-left: 80px; padding-top: 10px;">
-				    <img src="images/prevButton.png"
+            <div id="popup">
+                <input id="pass" type="password" placeholder="  Enter password" style="border-style: ridge; border-radius: 10px; width: 70%"/>
+                <button onclick="loginDone()" style="border-style: ridge; border-radius: 15px; border-width: 1.5px;">Done</button>     
+                <button onclick="loginCancel()" style="border-style: ridge; border-radius: 15px; border-width: 1.5px;">Cancel</button> 
+            </div>
+            <div id="playBar" class="playBarUser">
+			    <div class="paddingsInnerDivUser">
+				    <img id="prevButton" src="images/prevButton.png"
                          onclick="prevButtonClicked()"
-                         class="buttonImg"></img>
-				    <img src="images/playButton.png"
+                         class="buttonUser"></img>
+				    <img id="playpauseButton" src="images/playButton.png"
                          onclick="playpauseButtonClicked()"
-                         class="buttonImg"
-                         id="playpauseButton"></img>
-				    <img src="images/nextButton.png"
+                         class="buttonUser"></img>
+				    <img id="nextButton" src="images/nextButton.png"
                          onclick="nextButtonClicked()"
-                         class="buttonImg"></img>
-                    <div id="progressBarContainer"  onclick="progressBarClicked(event)">
+                         class="buttonUser"></img>
+                    <div id="progressBarContainer"  class="progressBarContainerUser"><!--onclick="progressBarClicked(event)"-->
 					    <div id="progressBar">
 						    <img id="imgProg" src="images/progress.jpg"></img>
 					    </div>
                     </div>
-                    <img src="images/refreshButton.png"
-                         onclick="refreshButtonClicked()"
+                    <img id="loginbutton" src="images/loginButton.png"
+                         onclick="loginButtonClicked()"
                          class="buttonImg"></img>
+                    <img id="refreshButton" src="images/refreshButton.png"
+                         onclick="refreshButtonClicked()"
+                         class="buttonUser"></img>
 			    </div>
 		    </div>
-            <span id="devInfo">Designed by: Ciprian Filipas (cipri.filipas@gmail.com)</span>
+            <!--<span id="devInfo">Designed by: SWAT @ Inovation Lab 2nd Edition 2014</span>-->
         </div>
             </form>
     </body>

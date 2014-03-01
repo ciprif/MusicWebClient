@@ -108,3 +108,43 @@ li {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+.listContainerSmallUser
+{
+    /*positioning*/
+    margin-left: 1%;
+    height: 70%;
+    width: 38%;
+    
+    /*background*/
+    background-color: rgba(5, 5, 5, 0.09);
+    
+    /*border*/
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.listContainerUser
+{
+    /*positioning*/
+    margin-left: 1%;
+    height: 65%;
+    width: 38%;
+    
+    /*background*/
+    background-color: rgba(5, 5, 5, 0.09);
+    
+    /*border*/
+    border-style: ridge;
+    border-color: rgba(0, 0, 0, 0.53);
+    border-width: 1.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
