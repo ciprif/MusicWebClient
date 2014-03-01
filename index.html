@@ -6,14 +6,17 @@
         <link rel="stylesheet" type="text/css" href="style/infoBox.css"></link>
         <link rel="stylesheet" type="text/css" href="style/niceList.css"></link>
         <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+        <link rel="stylesheet" type="text/css" href="style/filterInput.css"></link>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="scripts/Script.js"></script>
         <script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="scripts/lazyLoad.js"></script>
     </head>
     <body onload="">
         <div id="content">
-            <h1 style="">Music Web Client</h1>
-            <div id="listContainer" class="listContainerSmall">
+            <h1 style="">Music Web Client</h1> 
+            <input type="text" id="textFilter" class="filterInput" placeholder="Search..."></input>          
+            <div id="listContainer" class="listContainerSmall">                
                 <ul id="songs" class="niceListSmall">
                 </ul>
                 <div id="infoBox" class="infoBoxSmall"><div id="textPresenter">File info...</div></div>
@@ -42,5 +45,6 @@
 		    </div>
             <span id="devInfo">Designed by: Ciprian Filipas (cipri.filipas@gmail.com)</span>
         </div>
+            </form>
     </body>
 </html>
