@@ -1,13 +1,6 @@
 /*style for the play bar*/
 #playBar
-{
-    /*positioning*/
-    /*margin-bottom: 60px;*/
-    margin-top: 20px;
-    padding-bottom: 0px;
-	height: 10%;
-    width: 60%;
-    
+{   
     /*background*/
     background-color: rgba(5, 5, 5, 0.21);
     
@@ -24,6 +17,26 @@
     direction: ltr;
 }
 
+.playBarUser
+{
+    /*positioning*/
+    /*margin-bottom: 60px;*/
+    margin-top: 20px;
+    margin-left: 1%;
+    padding-bottom: 0px;
+	height: 10%;
+    width: 38%;
+}
+
+.playBar {
+    /*positioning*/
+    /*margin-bottom: 60px;*/
+    margin-top: 20px;
+    padding-bottom: 0px;
+    height: 10%;
+    width: 60%;
+}
+
 /*class for the buttons*/
 .buttonImg
 {
@@ -31,4 +44,9 @@
     float: left;
 	height: 63%;
 	padding-top: 0.5%;	
+}
+
+.buttonUser
+{
+    display: none;
 }

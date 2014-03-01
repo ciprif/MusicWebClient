@@ -30,13 +30,12 @@
 /*style for the progress bar container*/
 #progressBarContainer
 {
-    /*size & positioning*/
+     /*size & positioning*/
 	position: relative;
     margin-left: 2%;
 	margin-top: 1.7%;
 	height:  30%;
-    width: 57%;
-    
+       
     /*border*/
     border-style: ridge;
     border-bottom-left-radius: 15px;
@@ -46,4 +45,14 @@
     
     /*misc*/
     float: left;
+}
+
+.progressBarContainerUser
+{
+    width: 85%;
+}
+
+.progressBarContainer
+{
+    width: 57%;
 }

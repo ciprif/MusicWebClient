@@ -42,6 +42,11 @@
 	font-size: small;
 }
 
+.infoBoxUser
+{
+    display: none;
+}
+
 /*style for the info box span*/
 #textPresenter {
     /*overflow*/

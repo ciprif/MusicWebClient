@@ -8,6 +8,7 @@ var xmlHttpForPos;
 var playback = false;
 var musicTimer = null;
 var host = "localhost";
+var adminMode = false;
 
 function init()
 {
@@ -24,8 +25,8 @@ function init()
     xmlHttpForPos = null;
     xmlHttpForPos = new XMLHttpRequest();
     
-    var uri = "http://" + host + ":8080/musicWebService/items";
-    WebGetRequest(xmlHttpForList, uri, true);
+    //var uri = "http://" + host + ":8080/musicWebService/items";
+    //WebGetRequest(xmlHttpForList, uri, true);
 }
 
 function CallbackStateChangeItem()
@@ -131,16 +132,6 @@ function WebPostRequest(xmlHttpRequest, uri, async, param)
     xmlHttpRequest.send();
 }
 
-function onListItemClick(id)
-{
-    updateListItemUI(id);
-
-    //jump to file request
-    WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/jump/", true, GetNodeValue(id).id);
-    //get mp3 file info request
-    WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, GetNodeValue(id).id);
-}
-
 function GetNodeValue(nodeID)
 {
     var nodeInfo = new Object;
@@ -168,7 +159,7 @@ function updateListItemUI(id)
     {
         document.getElementById(previousId).className = previousItemClass;
     }
-
+    
     previousId = id;
     previousItemClass = document.getElementById(id).className;
 
@@ -180,90 +171,21 @@ function updateListItemUI(id)
     document.getElementById(id).className = "niceListClicked";
 }
 
-function nextButtonClicked()
+function loginButtonClicked()
 {
-    var val = new Number(previousId);
-    val++;
-
-    if (val == nodeArray.length) {
-        onListItemClick(0);
-    }
-    else {
-        onListItemClick(val);
-    }
+     document.getElementById("popup").style.display = "block";
+     document.getElementById("pass").value = "";
 }
 
-function prevButtonClicked()
+function loginDone()
 {
-    var val = new Number(previousId);
-    val--;
-
-    if (val == -1) {
-        val = nodeArray.length;
-        val--;
-        onListItemClick(val);
-    }
-    else {
-        onListItemClick(val);
-    }
+    document.getElementById("popup").style.display = "none";
+    var password = document.getElementById("pass").value;
+    adminMode = true;
+    resetCss();
 }
 
-function playpauseButtonClicked()
+function loginCancel()
 {
-    if (playback) {
-        WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/Pause", true);
-        togglePlayback(false);
-        document.getElementById("playpauseButton").src = "images/playButton.png";
-    }
-    else {
-        WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/Play", true);
-        togglePlayback(true);
-        document.getElementById("playpauseButton").src = "images/pauseButton.png";
-    }
-}
-
-function updateProgressBar()
-{
-    WebGetRequest(xmlHttpForPos, "http://" + host + ":8080/musicWebService/items/Pos", false);
-
-    var value = xmlHttpForPos.responseXML.getElementsByTagName("pos")[0].textContent;
-    var currentId = xmlHttpForPos.responseXML.getElementsByTagName("id")[0].textContent;
-
-    if (currentId != previousId){
-        updateListItemUI(currentId);
-    }
-    else {
-        if (value > 4) {
-            document.getElementById("progressBar").style.width = value + "%";
-        }
-        else {
-            document.getElementById("progressBar").style.width = "4%";
-        }
-    }
-}
-
-function togglePlayback(newVal)
-{
-    if (newVal == false) {
-        clearInterval(musicTimer);
-        playback = false;
-    }
-    else {
-        clearInterval(musicTimer);
-        musicTimer = setInterval(updateProgressBar, 500);
-        playback = true;
-    }
-}
-
-function refreshButtonClicked()
-{
-    var uri = "http://" + host + ":8080/musicWebService/items";
-    WebGetRequest(xmlHttpForList, uri, true);
-}
-
-function progressBarClicked(event)
-{
-    var xValue = event.layerX;
-    var percentage = (xValue * 100) / document.getElementById("progressBarContainer").clientWidth;
-    WebPostRequest(xmlHttpForPos, "http://" + host + ":8080/musicWebService/items/jumpToPos/", false, percentage);
+    document.getElementById("popup").style.display = "none";
 }

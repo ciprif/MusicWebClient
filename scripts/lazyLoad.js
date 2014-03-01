@@ -3,6 +3,7 @@ var pageSize = "10";
 var currentPage;
 
 $(function () {
+    init();
     currentPage = 1;
     populateNextSongs();
 })
