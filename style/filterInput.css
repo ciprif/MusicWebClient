@@ -1,17 +1,15 @@
-
-/*class for the filterInput*/
-.filterInput
+#textFilter
 {
-    /*size & positioning*/
-    width: 38.4%;
-    padding-left: 0;
-    margin-left: 10.8%;
-	
     /*misc*/
 	font-size: small;
     
-    border: 3px solid #EBE6E2; 
-    border-radius: 5px; 
+    border: 1.5px ridge rgba(0, 0, 0, 0.53); 
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     -webkit-transition: all 0.3s ease-out; 
     -moz-transition: all 0.3s ease-out; 
     -ms-transition: all 0.3s ease-out; 
@@ -19,7 +17,23 @@
     transition: all 0.3s ease-out; 
 }
 
+/*class for the filterInput*/
+.filterInput
+{
+    /*size & positioning*/
+    width: 38.2%;
+    padding-left: 0;
+    margin-left: 11%;
+}
+
  .filterInput:focus { 
 border-color: #BBB; 
 outline: none; 
 } 
+
+.filterInputUser
+{
+    width: 38.1%;
+    padding-left: 0;
+    margin-left: 1%;
+}

@@ -83,10 +83,12 @@ li {
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
     border-width: 1.5px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .listContainerSmall
@@ -103,10 +105,12 @@ li {
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
     border-width: 1.5px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .listContainerSmallUser
@@ -123,10 +127,12 @@ li {
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
     border-width: 1.5px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .listContainerUser
@@ -143,8 +149,10 @@ li {
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
     border-width: 1.5px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }

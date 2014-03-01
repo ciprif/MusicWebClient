@@ -11,6 +11,7 @@ function resetCss()
         $("#infoBox").removeClass("infoBoxUser");
         $("#title").removeClass("titleUser");
         $("#listContainer").removeClass("listContainerSmallUser");
+        $("#textFilter").removeClass("filterInputUser");
 
         $("#playpauseButton").addClass("buttonImg");
         $("#refreshButton").addClass("buttonImg");
@@ -21,5 +22,6 @@ function resetCss()
         $("#progressBarContainer").addClass("progressBarContainer");
         $("#title").addClass("title");
         $("#listContainer").addClass("listContainerSmall");
+        $("#textFilter").addClass("filterInput");
     }
 }
