@@ -4,9 +4,9 @@ function onListItemClick(id)
     updateListItemUI(id);
 
     //jump to file request
-    WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/enqueue/", true, GetNodeValue(id).id);
+    WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/enqueue/", true, id);
     //get mp3 file info request
-    WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, GetNodeValue(id).id);
+    WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, id);
 }
 
 function nextButtonClicked()

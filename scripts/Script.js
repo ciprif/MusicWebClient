@@ -96,10 +96,10 @@ function GetMusicListHtml(xmlDoc)
             trackNameArtist = node.artist + " : " + node.name;
 
         if (i % 2 == 0) {
-			listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  i + " class=\"niceListEven\">" + trackNameArtist + "</li>";
+			listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  node.id + " class=\"niceListEven\">" + trackNameArtist + "</li>";
         }
         else {
-            listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  i + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
+            listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  node.id + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
         }
     }
 
