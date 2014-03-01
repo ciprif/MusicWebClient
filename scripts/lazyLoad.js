@@ -6,6 +6,7 @@ $(function () {
     init();
     currentPage = 1;
     populateNextSongs();
+    listFilter();
 })
 
 function populateNextSongs()
@@ -19,6 +20,29 @@ function populateNextSongs()
         currentPage++;
         populateNextSongs();
         // it will stop when we get an error from the server
+    });
+}
+
+function listFilter() {
+     // OVERWRITES old selecor
+    jQuery.expr[':'].contains = function(a, i, m) {
+        return jQuery(a).text().toUpperCase()
+            .indexOf(m[3].toUpperCase()) >= 0;
+    };
+
+    $("#textFilter").change(function () {
+        var filter = $(this).val(); // get the value of the input, which we filter on
+        if (filter) {
+            $("#songs").find("li:not(:contains(" + filter + "))").slideUp();
+            $("#songs").find("li:contains(" + filter + ")").slideDown();
+
+        } else {
+            $("#songs").find("li").slideDown();
+        }
+
+    }).keyup(function () {
+        // fire the above change event after every letter
+        $(this).change();
     });
 }
 
