@@ -92,10 +92,10 @@ function GetMusicListHtml(xmlDoc)
     {
         node = GetNodeValue(i);
         if (node.artist == undefined || node.artist == null || node.artist == "") {
-            trackNameArtist = node.name;
+            trackNameArtist = node.title;
         }
         else
-            trackNameArtist = node.artist + " : " + node.name;
+            trackNameArtist = node.artist + " : " + node.title;
 
         if (i % 2 == 0) {
 			listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  node.id + " class=\"niceListEven\">" + trackNameArtist + "</li>";
@@ -146,10 +146,10 @@ function GetNodeValue(nodeID)
     else
         nodeInfo.artist = node.getElementsByTagName("Filename")[0].textContent;
     
-    if(node.getElementsByTagName("Name")[0] != undefined)
-        nodeInfo.name = node.getElementsByTagName("Name")[0].textContent;
+    if(node.getElementsByTagName("Title")[0] != undefined)
+        nodeInfo.title = node.getElementsByTagName("Title")[0].textContent;
     else
-        nodeInfo.name = node.getElementsByTagName("Fullpath")[0].textContent;
+        nodeInfo.title = node.getElementsByTagName("Fullpath")[0].textContent;
 
     return nodeInfo;
 }
