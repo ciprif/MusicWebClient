@@ -76,9 +76,15 @@ function ParseDOMItem(xmlDoc)
 
 function ParseDOMList(xmlDoc)
 {
+    document.getElementById("songs").innerHTML = GetMusicListHtml(xmlDoc);
+    $("#songs").find(".li").first().style.cssText += "border-style: none; border-top-left-radius: 15px; border-top-right-radius: 15px";
+	$("#songs").find(".li").last().style.cssText += "border-style: none; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px";
+}
+
+function GetMusicListHtml(xmlDoc)
+{
     nodeArray = xmlDoc.getElementsByTagName("MusicFile");
-    document.getElementById("songs").innerHTML = "";
-	var listTextInnerHtml = "";
+    var listTextInnerHtml = "";
     for (var i = 0; i < nodeArray.length; i++)
     {
         node = GetNodeValue(i);
@@ -95,10 +101,8 @@ function ParseDOMList(xmlDoc)
             listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  i + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
         }
     }
-	
-	document.getElementById("songs").innerHTML = listTextInnerHtml;
-	document.getElementById("0").style.cssText += "border-style: none; border-top-left-radius: 15px; border-top-right-radius: 15px";
-	document.getElementById(nodeArray.length - 1).style.cssText += "border-style: none; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px";
+
+	return listTextInnerHtml;
 }
 
 function WebGetRequest(xmlHttpRequest, uri, async, param)
