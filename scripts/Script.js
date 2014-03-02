@@ -11,6 +11,7 @@ var playback = false;
 var musicTimer = null;
 var host = "localhost";
 var adminMode = false;
+var viewQueueMode = false;
 
 function init()
 {
@@ -178,6 +179,50 @@ function loginButtonClicked()
      document.getElementById("popup").style.display = "block";
      document.getElementById("pass").value = "";
 }
+
+function switchListsButtonClicked()
+{
+    //set lists visibility  
+    viewQueueMode = !viewQueueMode;
+    if (viewQueueMode) {
+        $("#queuedSongs").removeClass("notVisibleElement");
+        $("#queuedSongs").addClass("visibleElement");
+
+        $("#songs").removeClass("visibleElement");
+        $("#songs").addClass("notVisibleElement");
+
+        $("#textFilter").removeClass("visibleElement");
+        $("#textFilter").addClass("notVisibleElement");
+        
+        $("#switchListButton").attr("src","images/playlistButton.png");
+    }
+    else{
+        $("#songs").removeClass("notVisibleElement");
+        $("#songs").addClass("visibleElement");
+
+        $("#queuedSongs").removeClass("visibleElement");
+        $("#queuedSongs").addClass("notVisibleElement");
+
+        $("#textFilter").removeClass("notVisibleElement");
+        $("#textFilter").addClass("visibleElement");
+
+        $("#switchListButton").attr("src","images/queueListButton.png");
+    }
+    
+    //update queued list
+    if (viewQueueMode) {
+        var uri = "http://" + host + ":8080/musicWebService/GetQueuedItems";
+        $.ajax(
+        {
+            url: uri.format(currentPage, pageSize)
+        }).done(function (result) {
+            musicList = GetMusicListHtml(result);
+            $("#queuedSongs").empty();
+            $("#queuedSongs").append(musicList);
+        });
+    }
+}
+
 
 function loginDone()
 {
