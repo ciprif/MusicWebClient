@@ -37,3 +37,22 @@ outline: none;
     padding-left: 0;
     margin-left: 1%;
 }
+
+@media screen and (max-width: 500px) {
+    /*class for the filterInput*/
+    .filterInput
+    {
+        /*size & positioning*/
+        width: 95%;
+        padding-left: 0;
+        margin-left: 11%;
+    }
+
+    .filterInputUser
+    {
+        width: 96%;
+        height: 33px;
+        padding-left: 0;
+        margin-left: 1%;
+    }
+}

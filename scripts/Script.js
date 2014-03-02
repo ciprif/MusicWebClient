@@ -1,5 +1,3 @@
-
-
 //get the list of items
 var nodeArray;
 var previousId;
@@ -9,11 +7,13 @@ var xmlHttpForItem;
 var xmlHttpForPos;
 var playback = false;
 var musicTimer = null;
-var host = "localhost";
+var host = "10.1.1.8";
 var adminMode = false;
+var isMobile = false;
 
 function init()
 {
+    isMobile = detectmob();
     previousId = -1;
 
     xmlHttpForItem = null;
@@ -96,12 +96,22 @@ function GetMusicListHtml(xmlDoc)
         }
         else
             trackNameArtist = node.artist + " : " + node.title;
-
-        if (i % 2 == 0) {
-			listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  node.id + " class=\"niceListEven\">" + trackNameArtist + "</li>";
+        if (isMobile) {
+            if (i % 2 == 0) {
+                listTextInnerHtml += "<li onclick=\"onListItemClick(this.id)\" id=" + node.id + " class=\"niceListEven\">" + trackNameArtist + "</li>";
+            }
+            else {
+                listTextInnerHtml += "<li onclick=\"onListItemClick(this.id)\" id=" + node.id + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
+            }
         }
-        else {
-            listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" +  node.id + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
+        else
+        {
+            if (i % 2 == 0) {
+                listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" + node.id + " class=\"niceListEven\">" + trackNameArtist + "</li>";
+            }
+            else {
+                listTextInnerHtml += "<li ondblclick=\"onListItemClick(this.id)\" id=" + node.id + " class=\"niceListOdd\">" + trackNameArtist + "</li>";
+            }
         }
     }
 

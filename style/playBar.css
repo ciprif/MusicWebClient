@@ -2,7 +2,7 @@
 #playBar
 {   
     /*background*/
-    background-color: rgba(5, 5, 5, 0.21);
+    background-color: rgba(5, 5, 5, 0.09);
     
     /*border*/
     border-style: ridge;
@@ -49,4 +49,36 @@
 .buttonUser
 {
     display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .playBarUser {
+        /*positioning*/
+        /*margin-bottom: 60px;*/
+        margin-top: 10px;
+        margin-left: 1%;
+        padding-bottom: 0px;
+        height: 8%;
+        width: 95%;
+    }
+
+    .playBar {
+        /*positioning*/
+        /*margin-bottom: 60px;*/
+        margin-top: 10px;
+        padding-bottom: 0px;
+        height: 8%;
+        width: 60%;
+    }
+
+    /*class for the buttons*/
+    .buttonImg {
+        padding-left: 2%;
+        float: left;
+        height: 70%;
+    }
+
+    .buttonUser {
+        display: none;
+    }
 }

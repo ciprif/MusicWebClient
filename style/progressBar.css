@@ -56,3 +56,35 @@
 {
     width: 57%;
 }
+
+@media screen and (max-width: 500px){
+    /*style for the progress bar container*/
+    #progressBarContainer
+    {
+         /*size & positioning*/
+	    position: relative;
+        margin-left: 2%;
+	    margin-top: 0.2%;
+	    height:  30%;
+
+        /*border*/
+        border-style: ridge;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        /*misc*/
+        float: left;
+    }
+
+    .progressBarContainerUser
+    {
+        width: 80%;
+    }
+
+    .progressBarContainer
+    {
+        width: 57%;
+    }
+}
