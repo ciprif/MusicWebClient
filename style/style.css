@@ -103,6 +103,14 @@ p {
     color: rgba(26, 26, 26, 1);
 }
 
+.visibleElement
+{
+}
+
+.notVisibleElement {
+    display: none;
+}
+
 @media screen and (max-width: 500px){
    #popup {
         width:95%;

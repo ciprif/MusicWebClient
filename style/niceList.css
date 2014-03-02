@@ -7,40 +7,34 @@ li {
     line-height: 240%;
     font-family: KaiTi;
     font-size: 100%;
-    
     /*overflow*/
-	overflow-y: hidden;
+    overflow-y: hidden;
     white-space: pre-wrap;
     word-wrap: break-word;
-    white-space : normal;
-    
+    white-space: normal;
     /*size*/
     width: 100%;
     height: 6%;
     position: relative;
-    
     /*misc*/
     cursor: default;
     list-style-type: none;
 }
 
 /*class for the nice list*/
-.niceListSmall
-{
+.niceListSmall {
     /*size & positioning*/
     width: 85%;
     height: 95%;
     padding-left: 0;
     margin-left: 7.5%;
-	
     /*misc*/
-	font-size: small;
+    font-size: small;
     overflow-y: scroll;
 }
 
 /*class for the nice list*/
-.niceList
-{
+.niceList {
     /*size & positioning*/
     width: 85%;
     height: 95%;
@@ -51,34 +45,28 @@ li {
 }
 
 /*class for the odd list items*/
-.niceListOdd
-{
+.niceListOdd {
     background-color: rgba(0, 148, 255, 0.46);
 }
 
 /*class for the even list items*/
-.niceListEven
-{
+.niceListEven {
     background-color: rgba(241, 229, 229, 0.25);
 }
 
 /*class for the clicked coloring*/
-.niceListClicked
-{
+.niceListClicked {
     background-color: Gray;
 }
 
 /*style for the list container*/
-.listContainer
-{
+.listContainer {
     /*positioning*/
     margin-left: 11%;
     height: 65%;
     width: 38%;
-    
     /*background*/
     background-color: rgba(5, 5, 5, 0.09);
-    
     /*border*/
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
@@ -91,16 +79,13 @@ li {
     border-bottom-right-radius: 15px;
 }
 
-.listContainerSmall
-{
+.listContainerSmall {
     /*positioning*/
     margin-left: 11%;
     height: 70%;
     width: 38%;
-    
     /*background*/
     background-color: rgba(5, 5, 5, 0.09);
-    
     /*border*/
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
@@ -113,16 +98,13 @@ li {
     border-bottom-right-radius: 15px;
 }
 
-.listContainerSmallUser
-{
+.listContainerSmallUser {
     /*positioning*/
     margin-left: 1%;
     height: 70%;
     width: 38%;
-    
     /*background*/
     background-color: rgba(5, 5, 5, 0.09);
-    
     /*border*/
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
@@ -135,16 +117,13 @@ li {
     border-bottom-right-radius: 15px;
 }
 
-.listContainerUser
-{
+.listContainerUser {
     /*positioning*/
     margin-left: 1%;
     height: 65%;
     width: 38%;
-    
     /*background*/
     background-color: rgba(5, 5, 5, 0.09);
-    
     /*border*/
     border-style: ridge;
     border-color: rgba(0, 0, 0, 0.53);
@@ -153,6 +132,12 @@ li {
     -webkit-border-bottom-right-radius: 15px;
     -moz-border-radius-bottomleft: 15px;
     -moz-border-radius-bottomright: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.listRounded {
+    border-style: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }

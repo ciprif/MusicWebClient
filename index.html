@@ -22,6 +22,8 @@
             <div id="listContainer" class="listContainerSmallUser"> 
                 <ul id="songs" class="niceListSmall">
                 </ul>
+                <ul id="queuedSongs" class="niceListSmall notVisibleElement">
+                </ul>
                 <div id="infoBox" class="infoBoxUser">
                     <div id="textPresenter">File info...</div>
                 </div>
@@ -53,6 +55,10 @@
                     <img id="refreshButton" src="images/refreshButton.png"
                          onclick="refreshButtonClicked()"
                          class="buttonUser"></img>
+                    <img id="switchListButton" src="images/queueListButton.png"
+                         onclick="switchListsButtonClicked()"
+                         class="buttonImg"></img>
+                    
 			    </div>
 		    </div>
             <!--<span id="devInfo">Designed by: SWAT @ Inovation Lab 2nd Edition 2014</span>-->

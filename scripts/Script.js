@@ -10,6 +10,7 @@ var musicTimer = null;
 var host = "10.1.1.8";
 var adminMode = false;
 var isMobile = false;
+var viewQueueMode = false;
 
 function init()
 {
@@ -80,8 +81,8 @@ function ParseDOMItem(xmlDoc)
 function ParseDOMList(xmlDoc)
 {
     document.getElementById("songs").innerHTML = GetMusicListHtml(xmlDoc);
-    $("#songs").find(".li").first().style.cssText += "border-style: none; border-top-left-radius: 15px; border-top-right-radius: 15px";
-	$("#songs").find(".li").last().style.cssText += "border-style: none; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px";
+    $("#songs").find(".li").first().addClass("listRounded");
+	$("#songs").find(".li").last().addClass("listRounded");
 }
 
 function GetMusicListHtml(xmlDoc)
@@ -188,6 +189,50 @@ function loginButtonClicked()
      document.getElementById("popup").style.display = "block";
      document.getElementById("pass").value = "";
 }
+
+function switchListsButtonClicked()
+{
+    //set lists visibility  
+    viewQueueMode = !viewQueueMode;
+    if (viewQueueMode) {
+        $("#queuedSongs").removeClass("notVisibleElement");
+        $("#queuedSongs").addClass("visibleElement");
+
+        $("#songs").removeClass("visibleElement");
+        $("#songs").addClass("notVisibleElement");
+
+        $("#textFilter").removeClass("visibleElement");
+        $("#textFilter").addClass("notVisibleElement");
+        
+        $("#switchListButton").attr("src","images/playlistButton.png");
+    }
+    else{
+        $("#songs").removeClass("notVisibleElement");
+        $("#songs").addClass("visibleElement");
+
+        $("#queuedSongs").removeClass("visibleElement");
+        $("#queuedSongs").addClass("notVisibleElement");
+
+        $("#textFilter").removeClass("notVisibleElement");
+        $("#textFilter").addClass("visibleElement");
+
+        $("#switchListButton").attr("src","images/queueListButton.png");
+    }
+    
+    //update queued list
+    if (viewQueueMode) {
+        var uri = "http://" + host + ":8080/musicWebService/GetQueuedItems";
+        $.ajax(
+        {
+            url: uri.format(currentPage, pageSize)
+        }).done(function (result) {
+            musicList = GetMusicListHtml(result);
+            $("#queuedSongs").empty();
+            $("#queuedSongs").append(musicList);
+        });
+    }
+}
+
 
 function loginDone()
 {
