@@ -1,13 +1,18 @@
 
 function onListItemClick(id)
 {
-    updateListItemUI(id);
     if (adminMode == false) {
         //enqueue to file request
-        WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/enqueue/", true, id);
+        uri =  "http://" + host + ":8080/musicWebService/items/enqueue/"+id;
+        $.ajax({
+            url:uri,
+            async:false,
+            type: "POST"
+        });
     }
     else
     {
+         updateListItemUI(id);
          WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/jump/", true, id);
          //get mp3 info
          WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, id);

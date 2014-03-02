@@ -80,8 +80,8 @@ function ParseDOMItem(xmlDoc)
 function ParseDOMList(xmlDoc)
 {
     document.getElementById("songs").innerHTML = GetMusicListHtml(xmlDoc);
-    $("#songs").find(".li").first().style.cssText += "border-style: none; border-top-left-radius: 15px; border-top-right-radius: 15px";
-	$("#songs").find(".li").last().style.cssText += "border-style: none; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px";
+    $("#songs").find(".li").first().addClass("listRounded");
+	$("#songs").find(".li").last().addClass("listRounded");
 }
 
 function GetMusicListHtml(xmlDoc)
