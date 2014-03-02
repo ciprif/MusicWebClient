@@ -1,18 +1,21 @@
 
 function onListItemClick(id)
 {
+    updateListItemUI(id);
     if (adminMode == false) {
         //enqueue to file request
         uri =  "http://" + host + ":8080/musicWebService/items/enqueue/"+id;
         $.ajax({
-            url:uri,
-            async:false,
-            type: "POST"
-        });
+            url: uri,
+            async: false,
+            type: "GET"
+        }).done(
+            function (added)
+            { if(added.firstChild.innerHTML == "true" && viewQueueMode == false) $.notify("  Your track has been added :)", {className: "success", globalPosition: 'top left'}); }
+        );
     }
     else
     {
-         updateListItemUI(id);
          WebPostRequest(xmlHttpForList, "http://" + host + ":8080/musicWebService/items/jump/", true, id);
          //get mp3 info
          WebGetRequest(xmlHttpForItem, "http://" + host + ":8080/musicWebService/items/", true, id);

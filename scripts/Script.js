@@ -81,8 +81,6 @@ function ParseDOMItem(xmlDoc)
 function ParseDOMList(xmlDoc)
 {
     document.getElementById("songs").innerHTML = GetMusicListHtml(xmlDoc);
-    $("#songs").find(".li").first().addClass("listRounded");
-	$("#songs").find(".li").last().addClass("listRounded");
 }
 
 function GetMusicListHtml(xmlDoc)

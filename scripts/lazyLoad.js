@@ -7,6 +7,9 @@ $(function () {
     currentPage = 1;
     populateNextSongs();
     listFilter();
+
+    $("#songs").find(".li").first().addClass("listRoundedTop");
+	$("#songs").find(".li").last().addClass("listRoundedBottom");
 })
 
 function populateNextSongs()

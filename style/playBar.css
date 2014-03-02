@@ -75,10 +75,15 @@
     .buttonImg {
         padding-left: 2%;
         float: left;
-        height: 70%;
+        height: 57%;
+	    padding-top: 0;
     }
 
     .buttonUser {
+        display: none;
+    }
+    
+    #loginbutton {
         display: none;
     }
 }

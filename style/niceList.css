@@ -136,8 +136,14 @@ li {
     border-bottom-right-radius: 15px;
 }
 
-.listRounded {
+.listRoundedBottom {
     border-style: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.listRoundedTop{
+     border-style: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
